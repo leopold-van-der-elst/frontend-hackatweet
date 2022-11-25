@@ -6,6 +6,9 @@ import Tweet from './Tweet'
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 function Home() {
+    const user = useSelector((state) => state.user.value);
+
+    console.log(user);
 
     const [tweetInput, setTweetInput] = useState("")
     const [tweet, setTweet] = useState([])

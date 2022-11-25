@@ -1,0 +1,13 @@
+.registerContainer {
+    background-color: #161D28;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input {
+    background-color: transparent;
+    color: white;
+}
