@@ -4,45 +4,19 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { login, logout } from '../reducers/user';
 import { useDispatch } from 'react-redux';
+import { Modal } from 'antd';
+import SignUp from './SignUp';
+import SignIn from './SignIn';
 
 function Login() {
 
-	const handleRegister = () => {
-		fetch('http://localhost:3000/users/signup', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ username: signUpUsername, password: signUpPassword }),
-		}).then(response => response.json())
-			.then(data => {
-				if (data.result) {
-					dispatch(login({ username: signUpUsername, token: data.token }));
-					setSignUpUsername('');
-					setSignUpPassword('');
-					setIsModalVisible(false)
-				}
-			});
-	};
-
-    const handleConnection = () => {
-
-		fetch('http://localhost:3000/users/signin', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ username: signInUsername, password: signInPassword }),
-		}).then(response => response.json())
-			.then(data => {
-				if (data.result) {
-					dispatch(login({ username: signInUsername, token: data.token }));
-					setSignInUsername('');
-					setSignInPassword('');
-					setIsModalVisible(false)
-				}
-			});
-	};
+	const [modalRegisterOpen, setModalRegisterOpen] = useState(false);
+	const [modalSignInOpen, setModalSignInOpen] = useState(false);
 
     useEffect(() =>{
         return () => {console.log("bye bye !")}
     }, [])
+
     return(
         <div className={styles.container}>
             <Head>
@@ -55,9 +29,15 @@ function Login() {
                 <Image src= "/hackatweetlogo.png" height={50} width={50} />
                 <h1>See what's happening</h1>
                 <h2>Join Hackatweet today.</h2>
-                <button>Sign up</button>
-                <p>Akready have an account?</p>
-                <button>Sign in</button>
+                <button onClick={() => setModalRegisterOpen(true)}>Sign up</button>
+					<Modal className={styles.modal} open={modalRegisterOpen}>
+						<SignUp />
+					</Modal>
+                <p>Already have an account?</p>
+                <button onClick={() => setModalSignInOpen(true)}>Sign in</button>
+					<Modal className={styles.modal} open={modalSignInOpen}>
+						<SignIn />
+					</Modal>
             </div>
         </div>
 
