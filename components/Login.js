@@ -27,8 +27,11 @@ function Login() {
             </div>
             <div className={styles.rightPanel}>
                 <Image src= "/hackatweetlogo.png" height={50} width={50} />
-                <h1>See what's happening</h1>
-                <h2>Join Hackatweet today.</h2>
+                <div className={styles.textContainer}>
+                    <h1>See what's happening</h1>
+                    <h2>Join Hackatweet today.</h2>
+                </div>
+                <div className={styles.visitorSection}>
                 <button onClick={() => setModalRegisterOpen(true)}>Sign up</button>
 					<Modal className={styles.modal} open={modalRegisterOpen}>
 						<SignUp />
@@ -38,6 +41,7 @@ function Login() {
 					<Modal className={styles.modal} open={modalSignInOpen}>
 						<SignIn />
 					</Modal>
+                </div>
             </div>
         </div>
 

@@ -14,4 +14,7 @@
     width: 60vw;
     background-color: black;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
