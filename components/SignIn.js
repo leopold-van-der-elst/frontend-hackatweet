@@ -24,7 +24,7 @@ function SignIn() {
 		}).then(response => response.json())
 			.then(data => {
 				if (data.result) {
-					dispatch(login({ username: signInUsername, token: data.token }))
+					dispatch(login({ username: signInUsername, token: data.token, id: data._id }))
 					router.push('/home');
 				}
 			});
@@ -32,9 +32,9 @@ function SignIn() {
 
     return(
         <div className={styles.signInContainer}>
-            		<input type="text" placeholder="Username" id="signInUsername" onChange={(e) => setSignInUsername(e.target.value)} value={signInUsername} />
-					<input type="password" placeholder="Password" id="signInPassword" onChange={(e) => setSignInPassword(e.target.value)} value={signInPassword} />
-					<button id="connection" onClick={() => handleConnection()}>Connect</button>
+            <input type="text" placeholder="Username" id="signInUsername" onChange={(e) => setSignInUsername(e.target.value)} value={signInUsername} />
+			<input type="password" placeholder="Password" id="signInPassword" onChange={(e) => setSignInPassword(e.target.value)} value={signInPassword} />
+			<button id="connection" onClick={() => handleConnection()}>Connect</button>
         </div>
 
     )

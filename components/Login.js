@@ -23,21 +23,21 @@ function Login() {
                 <title>Hackatweet - Login</title>
             </Head>
             <div className={styles.leftPanel}>
-                <Image src= "/hackatweetlogo.png" height={300} width={300} />
+                <Image src= "/hackatweetlogo.png" height={250} width={300} />
             </div>
             <div className={styles.rightPanel}>
-                <Image src= "/hackatweetlogo.png" height={50} width={50} />
+                <Image src= "/hackatweetlogo.png" className={styles.miniLogo} height={40} width={50} />
                 <div className={styles.textContainer}>
-                    <h1>See what's happening</h1>
-                    <h2>Join Hackatweet today.</h2>
+                    <h1 className={styles.mainTitle}>See what's<br/> happening</h1>
                 </div>
                 <div className={styles.visitorSection}>
-                <button onClick={() => setModalRegisterOpen(true)}>Sign up</button>
+                <h2 className={styles.subtitle}>Join Hackatweet today.</h2>
+                <button className={styles.register} onClick={() => setModalRegisterOpen(true)}>Sign up</button>
 					<Modal className={styles.modal} open={modalRegisterOpen}>
 						<SignUp />
 					</Modal>
                 <p>Already have an account?</p>
-                <button onClick={() => setModalSignInOpen(true)}>Sign in</button>
+                <button className={styles.signIn} onClick={() => setModalSignInOpen(true)}>Sign in</button>
 					<Modal className={styles.modal} open={modalSignInOpen}>
 						<SignIn />
 					</Modal>

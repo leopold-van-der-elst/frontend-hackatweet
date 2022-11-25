@@ -1,13 +1,23 @@
+@font-face {
+  font-family: 'Mont-Heavy';
+  src: local('Mont-Heavy'), url('../src/fonts/mont-heavy.ttf') format('truetype');
+}
+
 .container {
     height: 100vh;
     width: 100vw;
     margin: 0;
     display: flex;
+    font-family: 'Mont-Heavy';
 }
 
 .leftPanel {
     width: 40vw;
+    background-image: url('../public/loginbackground.png');
     background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .rightPanel {
@@ -16,5 +26,59 @@
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+}
+
+.miniLogo {
+    margin: 30px
+}
+.textContainer {
+    margin: 30px 0px 0px 0px;
+}
+
+.mainTitle {
+    font-size: 70px;
+    font-weight: 600;
+    margin-left: 30px;
+}
+
+.visitorSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 30px;
+}
+
+.subtitle {
+    font-size: 32px;
+
+}
+.register {
+    width: 220px;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #378FEE;
+    border: 1px solid #378FEE;
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.signIn {
+    width: 220px;
+    height: 40px;
+    color: #378FEE;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: transparent;
+    border: 1px solid grey;
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.modal .ant-modal-header {
+    background-color: #161d28;
 }
