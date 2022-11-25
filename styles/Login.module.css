@@ -1,0 +1,20 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    display: flex;
+}
+
+.leftPanel {
+    width: 40vw;
+    background-color: blue;
+}
+
+.rightPanel {
+    width: 60vw;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
