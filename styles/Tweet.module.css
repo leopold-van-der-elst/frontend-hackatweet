@@ -1,0 +1,20 @@
+.tweetContainer{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+    border-bottom:  0.3px solid rgb(158, 158, 158);
+    border-left:  0.3px solid rgb(158, 158, 158);
+    border-right:  0.3px solid rgb(197, 196, 196);
+    height: 150px;
+}
+.tweetContent{
+    color: #ffffff;
+    font-size: 16px;
+    margin-left: 20px;
+}
+.heartIcon{
+    margin-left: 20px;
+    margin-top: 5px;
+    color: #ffffff;
+}
