@@ -1,10 +1,7 @@
-import Head from 'next/head'
-import Home from '../components/home'
+import Login from "../components/Login"
 
-export default function HomePage() {
-  return (
-      <>
-      <Home />
-      </>
-  )
+function Index() {
+  return <Login />
 }
+
+export default Index;
