@@ -8,6 +8,8 @@ import { Modal } from 'antd';
 import SignUp from './SignUp';
 import SignIn from './SignIn';
 
+
+
 function Login() {
 
 	const [modalRegisterOpen, setModalRegisterOpen] = useState(false);
@@ -32,13 +34,20 @@ function Login() {
                 </div>
                 <div className={styles.visitorSection}>
                 <h2 className={styles.subtitle}>Join Hackatweet today.</h2>
-                <button className={styles.register} onClick={() => setModalRegisterOpen(true)}>Sign up</button>
-					<Modal className={styles.modal} open={modalRegisterOpen}>
-						<SignUp />
-					</Modal>
+                <button className={styles.register}  onClick={() => setModalRegisterOpen(true)}>Sign up</button>
+                
+                <Modal 
+                open={modalRegisterOpen} 
+                className= {styles.registerModal}
+                onCancel={() => setModalRegisterOpen(false)} 
+                footer={null}>
+                    <div className={styles.registerContainer}>
+					<SignUp />
+                    </div>
+				</Modal>
                 <p>Already have an account?</p>
                 <button className={styles.signIn} onClick={() => setModalSignInOpen(true)}>Sign in</button>
-					<Modal className={styles.modal} open={modalSignInOpen}>
+				<Modal className={styles.modal} open={modalSignInOpen} onCancel={() => setModalSignInOpen(false)} footer={null}>
 						<SignIn />
 					</Modal>
                 </div>

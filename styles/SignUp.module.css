@@ -1,13 +1,39 @@
 .registerContainer {
+    width: 30vw;
+    padding-left: 35px;
+    height: 400px;
     background-color: #161D28;
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
+.accountText {
+    font-size: 28px;
+    font-weight: 800;
+}
+
 .input {
+    width: 220px;
+    height: 25px;
     background-color: transparent;
     color: white;
+    padding: 10px;
+    border: 1px solid gray;
+    margin: 5px;
 }
+
+.registerButton {
+    width: 250px;
+    height: 35px;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 50px;
+    text-align: center;
+}
+

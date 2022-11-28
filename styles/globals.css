@@ -9,3 +9,13 @@ body {
   body::-webkit-scrollbar {
     width: 1em;
   }
+
+  .ant-modal-content {
+    background-color: #161d28 !important;
+    padding-left: 5px !important;
+    width: 35vw !important;
+  }
+  
+  .ant-modal-close-x {
+    color: white;
+  }

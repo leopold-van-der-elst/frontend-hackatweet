@@ -34,12 +34,12 @@ function SignUp() {
 
     return(
       <div className={styles.registerContainer}>
-        <Image src= "/hackatweetlogo.png" height={50} width={50} />
-            <h3>Create your Hackatweet account</h3>
+        <Image src= "/hackatweetlogo.png" height={40} width={50} />
+            <h3 className={styles.accountText}>Create your Hackatweet account</h3>
             <input type="text" className={styles.input} placeholder="Firstname" id="signUpFirstname" onChange={(e) => setSignFirstname(e.target.value)} value={signUpFirstname} />
             <input type="text" className={styles.input} placeholder="Username" id="signUpUsername" onChange={(e) => setSignUpUsername(e.target.value)} value={signUpUsername} />
             <input type="password" className={styles.input} placeholder="Password" id="signUpPassword" onChange={(e) => setSignUpPassword(e.target.value)} value={signUpPassword} />
-            <button onClick={() => handleRegister()}>Sign Up</button>
+            <button className={styles.registerButton} onClick={() => handleRegister()}>Sign Up</button>
         </div>
     );
 }
