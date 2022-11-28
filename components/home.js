@@ -1,9 +1,9 @@
 import React from 'react'
 import styles from '../styles/Home.module.css'
 import {useState, useEffect} from 'react'
+import {useSelector} from 'react-redux';
 import Tweet from './Tweet'
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { useSelector } from 'react-redux';
 
 function Home() {
     const user = useSelector((state) => state.user.value);
@@ -14,6 +14,10 @@ function Home() {
     const [tweet, setTweet] = useState([])
     const [helper, setHelper] = useState(0)
 
+    const userId = useSelector((state)=> state.user.value.id )
+    const username = useSelector((state) => state.user.value.username); 
+    const token = useSelector((state) => state.user.value.token)
+    console.log(userId, username, token)
     const handleDelete = (id) => {
       fetch('http://localhost:3000/tweets/remove', {
           method: 'POST',
@@ -46,10 +50,11 @@ function Home() {
               'Accept': 'application/json',
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify({content: tweetInput, username: result, hashtag: result})
+            body: JSON.stringify({content: tweetInput, username , hashtag: result})
           })
           .then(response => response.json())
           .then(data => {
+            setTweetInput("")
             setHelper(helper + 1)
           })
     }
@@ -65,7 +70,7 @@ function Home() {
         console.log(tweetInput)
     }
     const tweets = tweet.map((tweet, i) => {
-        return <Tweet key={i} content={tweet.content} id={tweet._id} icon={faTrash} handleDelete={handleDelete} />
+        return <Tweet key={i} content={tweet.content} username={username} id={tweet._id} icon={faTrash} handleDelete={handleDelete} />
     })
 
   return (

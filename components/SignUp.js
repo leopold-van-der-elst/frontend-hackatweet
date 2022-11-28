@@ -26,7 +26,7 @@ function SignUp() {
 		}).then(response => response.json())
 			.then(data => {
 				if (data.result) {
-					dispatch(login({ username: signUpUsername, token: data.token }));
+					dispatch(login({ username: data.user.username, token: data.user.token, id: data.user._id }));
                     router.push('/home');
 				}
 			});

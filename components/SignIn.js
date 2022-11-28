@@ -24,8 +24,10 @@ function SignIn() {
 		}).then(response => response.json())
 			.then(data => {
 				if (data.result) {
-					dispatch(login({ username: signInUsername, token: data.token, id: data._id }))
+					dispatch(login({ username: data.user.username, token: data.user.token, id: data.user.id }));
+					console.log(data.user)
 					router.push('/home');
+					console.log(data.user)
 				}
 			});
 	};
